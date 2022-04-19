@@ -1,0 +1,272 @@
+body {
+  height:100%;
+  width:100%;
+  margin: 0;
+  background-image: url(https://cdn.glitch.global/11b401b8-f305-4883-a577-498b240924b5/1-hearthstone-heroes-of-warcraft-lucie-malecot.jpg?v=1646145738963);
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: url("../Images/gam376.gif"), auto;
+}
+
+.page-title {
+  background: url(https://cdn.glitch.global/11b401b8-f305-4883-a577-498b240924b5/Top5Dota2Carry.png?v=1646144015335) no-repeat center fixed;
+  background-size: cover;
+  font-family: serif;
+  color: white;
+  font-weight: normal;
+  text-align: center;
+  font-size: 7em;
+}
+
+.game-info-container {
+  grid-column: 1 / -1;
+  display: flex;
+    justify-content: space-between;
+}
+.game-info {
+  color: white;
+  font-size: 2em;
+}
+.blood {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color:silver;
+  text-shadow:
+  4px 4px 1px #300000,
+  4px 6px 1px #400000,
+  4px 8px 1px #500000,
+  4px 10px 1px #600000,
+  4px 12px 1px #700000,
+  4px 14px 1px #800000,
+  4px 16px 1px #900000,
+  4px 18px 1px #A00000,
+  4px 20px 1px #B00000,
+  4px 22px 1px #C00000,
+  4px 24px 1px #D00000,
+  4px 26px 1px #E00000,
+  4px 28px 1px #F00000,
+  4px 30px 1px #FA0000,
+  4px 32px 1px #FB0000,
+  4px 34px 1px #FC0000,
+  4px 36px 1px #FD0000,
+  4px 38px 1px #FE0000,
+  4px 40px 2px #FF0000;
+}
+.ldoor{
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  animation: ldoor 3s ease-in-out forwards;
+  background-image: url(../Images/rightdoor.jpg);
+  background-size: 100% 110%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.rdoor{
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  animation: rdoor 3s ease-in-out forwards;
+  background-image: url(../Images/leftdoor.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@keyframes ldoor {
+  from{left: 0;}
+  to{left: -50%;}
+}
+@keyframes rdoor {
+  from{right: 0;}
+  to{right: -50%;}
+}
+.memory-game {
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(8, auto);
+  grid-gap: 10px;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.card {
+  position: relative;
+  height: 175px;
+  width: 125px;
+  transform-style: preserve-3d;
+  cursor: url("../Images/cursor.png"), auto;
+}
+
+.card-face {
+  position:absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 500ms ease-in-out;
+  backface-visibility: hidden;
+}
+.card-back {
+  display: flex;
+  transform: rotateY(0); 
+}
+
+.card.visible .card-back {
+  transform: rotateY(-180deg); 
+}
+.card-front {
+  position:relative;
+  display:flex;
+  height:100%;
+  width:100%;
+  transform: rotateY(180deg);
+}
+
+.card.visible .card-front {
+  transform: rotateY(0); 
+}
+.card-value {
+  position: relative;
+  height:100%;
+  width:100%;
+  display:flex;
+  transition: transform 100ms ease-in-out;
+  transform: scale(.9);
+  border: 2px black;
+}
+
+.card.matched .card-front .card-value {
+  animation: dance 1s linear 500ms;
+}
+
+
+.overlay-text {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-family: serif;
+  transition: background-color 500ms, font-size 500ms;
+}
+
+.overlay-text-small {
+  font-size: .3em;
+}
+
+.overlay-text.visible {
+  display: flex;
+  animation: overlay-grow 500ms forwards;
+}
+
+/* Form  */
+.box {
+  padding: 10px;
+  background: rgb(15, 15, 15);
+  text-align: center;
+  transition: 0.25s;
+  border-radius: 10px;
+}
+
+.box input[type="text"],
+.box input[type="password"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #da08ac;
+  padding: 10px 10px;
+  width: 250px;
+  outline: none;
+  color: rgb(243, 236, 236);
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+.box h1 {
+  color: rgb(231, 99, 209);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.box input[type="text"]:focus{
+  width: 300px;
+  border-color: #6e0454;
+}
+
+.box input[type="submit"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  text-decoration-color: black;
+  border: 2px solid #f838a2;
+  padding: 14px 40px;
+  outline: none;
+  color: rgb(56, 54, 54);
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.box input[type="submit"]:hover {
+  background: #dae4de;
+}
+form h1 {
+  color:white;
+  align-items: center;
+}
+
+@keyframes dance {
+  0% {
+    opacity: 1.0;
+  }
+  25% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  75% {
+     opacity:0.2;
+  }
+}
+
+@keyframes overlay-grow {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 0;
+  }
+  to {
+    background-color: rgba(0, 0, 0, .8);
+    font-size: 8em;
+  }
+}
+@media (max-width: 600px) {
+  .memory-game {
+    grid-template-columns: repeat(4, auto);
+    padding: 10px auto;
+  }
+  .card {
+    height: 125px;
+    width: 75px;
+  }
+
+  .game-info-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 2px;
+  }
+  .page-title {
+  font-size: 6em;
+  }
+}
