@@ -8,25 +8,18 @@ body {
   cursor: url("../Images/gam376.gif"), auto;
 }
 
-.page-title {
-  background: url(https://cdn.glitch.global/11b401b8-f305-4883-a577-498b240924b5/Top5Dota2Carry.png?v=1646144015335) no-repeat center fixed;
-  background-size: cover;
-  font-family: serif;
-  color: white;
-  font-weight: normal;
-  text-align: center;
-  font-size: 7em;
-}
-
 .game-info-container {
   grid-column: 1 / -1;
   display: flex;
-    justify-content: space-between;
+  justify-content: space-between;
+  margin: 2rem;
 }
+
 .game-info {
   color: white;
-  font-size: 2em;
+  font-size: 3em;
 }
+
 .blood {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color:silver;
@@ -51,6 +44,7 @@ body {
   4px 38px 1px #FE0000,
   4px 40px 2px #FF0000;
 }
+
 .ldoor{
   width: 50%;
   height: 100%;
@@ -62,6 +56,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .rdoor{
   width: 50%;
   height: 100%;
@@ -73,6 +68,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
+
 @keyframes ldoor {
   from{left: 0;}
   to{left: -50%;}
@@ -81,21 +77,21 @@ body {
   from{right: 0;}
   to{right: -50%;}
 }
+
 .memory-game {
-  margin: 50px auto;
+  margin-top: 300px;
   display: grid;
   grid-template-columns: repeat(8, auto);
-  grid-gap: 10px;
+  grid-gap: 30px;
   justify-content: center;
   perspective: 1000px;
 }
 
 .card {
   position: relative;
-  height: 175px;
-  width: 125px;
+  height: 420px;
+  width: 300px;
   transform-style: preserve-3d;
-  cursor: url("../Images/cursor.png"), auto;
 }
 
 .card-face {
@@ -109,7 +105,7 @@ body {
 }
 .card-back {
   display: flex;
-  transform: rotateY(0); 
+  transform: rotateY(0);
 }
 
 .card.visible .card-back {
@@ -137,7 +133,7 @@ body {
 }
 
 .card.matched .card-front .card-value {
-  animation: dance 1s linear 500ms;
+  animation: scale 1.5s both;
 }
 
 
@@ -160,10 +156,38 @@ body {
 .overlay-text-small {
   font-size: .3em;
 }
+.overlay-text span {
+  font-size: 5rem;
+}
 
 .overlay-text.visible {
   display: flex;
-  animation: overlay-grow 500ms forwards;
+  animation: overlaygrow 500ms forwards;
+}
+@keyframes scale {
+  0% {
+    scale: 0.9;
+  }
+  25% {
+    scale: 1.1;
+  }
+  50% {
+    scale: 1.5;
+  }
+  75% {
+    scale: 2.0;
+  }
+}
+
+@keyframes overlaygrow {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 0;
+  }
+  to {
+    background-color: rgba(0, 0, 0, .8);
+    font-size: 8em;
+  }
 }
 
 /* Form  */
@@ -226,47 +250,155 @@ form h1 {
   align-items: center;
 }
 
-@keyframes dance {
-  0% {
-    opacity: 1.0;
+
+@media (max-width: 2560px) {
+  .memory-game {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    margin: 90px;
   }
-  25% {
-    opacity: 0.8;
+  .card {
+    height: 300px;
+    width: 225px;
   }
-  50% {
-    opacity: 0.6;
+  .game-info-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
   }
-  75% {
-     opacity:0.2;
+}
+@media (max-width: 1440px) {
+  .memory-game {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-auto-flow: dense;
+    margin-top: -80px;
+  }
+  .card {
+    height: 155px;
+    width: 120px;
+  }
+  .game-info-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+  }
+  .game-info {
+    font-size: 2rem;
+  }
+  .overlay-text .blood {
+    font-size: 5rem;
+  }
+  .overlay-text span {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 1024px) {
+  .memory-game {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(8, auto);
+    grid-auto-flow: dense;
+    margin-top: 150px;
+  }
+  .card {
+    height: 150px;
+    width: 100px;
+  }
+  .game-info-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+  }
+  .game-info {
+    font-size: 1rem;
+  }
+  .overlay-text .blood {
+    font-size: 5rem;
+  }
+  .overlay-text span {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .memory-game {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, auto);
+    grid-auto-flow: dense;
+    margin-top: -50px;
+  }
+  .card {
+    height: 115px;
+    width: 90px;
+  }
+  .game-info-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+  }
+  .game-info {
+    font-size: 1rem;
+  }
+  .overlay-text .blood {
+    font-size: 5rem;
+  }
+  .overlay-text span {
+    font-size: 2rem;
   }
 }
 
-@keyframes overlay-grow {
-  from {
-    background-color: rgba(0, 0, 0, 0);
-    font-size: 0;
-  }
-  to {
-    background-color: rgba(0, 0, 0, .8);
-    font-size: 8em;
-  }
-}
 @media (max-width: 600px) {
   .memory-game {
+    display: grid;
     grid-template-columns: repeat(4, auto);
-    padding: 10px auto;
+    gap: 3px;
+    margin-top: 20px;
   }
   .card {
-    height: 125px;
-    width: 75px;
+    height: 110px;
+    width: 90px;
   }
 
   .game-info-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 2px;
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
   }
   .page-title {
   font-size: 6em;
+  }
+}
+@media (max-width: 375px) {
+  .memory-game {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    margin-top: 20px;
+  }
+  .card {
+    height: 100px;
+    width: 70px;
+  }
+
+  .game-info-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+  }
+  .page-title {
+    font-size: 0.5em;
+  }
+  .game-info {
+    font-size: 0.5rem;
+  }
+  .overlay-text .blood {
+    font-size: 3rem;
+  }
+  .overlay-text span {
+    font-size: 0.5rem;
   }
 }

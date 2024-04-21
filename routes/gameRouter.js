@@ -4,7 +4,7 @@ const { gameView } = require("../controler/gameController");
 
 const router = express.Router();
 
-router.get("/game", gameView);
+router.get("/", gameView);
 
 
 
