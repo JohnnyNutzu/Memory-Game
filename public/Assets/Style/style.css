@@ -1,10 +1,9 @@
 body {
   height:100%;
   width:100%;
-  margin: 0;
-  background-image: url(https://cdn.glitch.global/11b401b8-f305-4883-a577-498b240924b5/1-hearthstone-heroes-of-warcraft-lucie-malecot.jpg?v=1646145738963);
-  background-size: cover;
+  background-image: url('https://cdn.glitch.global/11b401b8-f305-4883-a577-498b240924b5/1-hearthstone-heroes-of-warcraft-lucie-malecot.jpg?v=1646145738963');
   background-repeat: no-repeat;
+  background-size: 100% 130%;
   cursor: url("../Images/gam376.gif"), auto;
 }
 
@@ -51,7 +50,7 @@ body {
   position: absolute;
   left: 0;
   animation: ldoor 3s ease-in-out forwards;
-  background-image: url(../Images/rightdoor.jpg);
+  background-image: url(../Images/leftdoor.jpg);
   background-size: 100% 110%;
   background-repeat: no-repeat;
   background-position: center;
@@ -63,7 +62,7 @@ body {
   position: absolute;
   right: 0;
   animation: rdoor 3s ease-in-out forwards;
-  background-image: url(../Images/leftdoor.jpg);
+  background-image: url(../Images/rightdoor.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -79,17 +78,15 @@ body {
 }
 
 .memory-game {
-  margin-top: 300px;
   display: grid;
   grid-template-columns: repeat(8, auto);
-  grid-gap: 30px;
   justify-content: center;
   perspective: 1000px;
 }
 
 .card {
   position: relative;
-  height: 420px;
+  height: 330px;
   width: 300px;
   transform-style: preserve-3d;
 }
@@ -151,6 +148,7 @@ body {
   color: white;
   font-family: serif;
   transition: background-color 500ms, font-size 500ms;
+  
 }
 
 .overlay-text-small {
@@ -250,16 +248,16 @@ form h1 {
   align-items: center;
 }
 
-
 @media (max-width: 2560px) {
   .memory-game {
+    margin-top: 300px;
     display: grid;
-    grid-template-columns: repeat(4, auto);
-    margin: 90px;
+    grid-template-columns: repeat(8, auto);
+    gap: 20px;
   }
   .card {
     height: 300px;
-    width: 225px;
+    width: 280px;
   }
   .game-info-container {
     grid-column: 1 / -1;
@@ -271,13 +269,13 @@ form h1 {
 @media (max-width: 1440px) {
   .memory-game {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(6, auto);
     grid-auto-flow: dense;
     margin-top: -80px;
   }
   .card {
-    height: 155px;
-    width: 120px;
+    height: 175px;
+    width: 140px;
   }
   .game-info-container {
     grid-column: 1 / -1;
@@ -299,13 +297,13 @@ form h1 {
   .memory-game {
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(8, auto);
+    grid-template-columns: repeat(6, auto);
     grid-auto-flow: dense;
-    margin-top: 150px;
+    margin-top: -50px;
   }
   .card {
-    height: 150px;
-    width: 100px;
+    height: 130px;
+    width: 90px;
   }
   .game-info-container {
     grid-column: 1 / -1;
@@ -327,9 +325,8 @@ form h1 {
   .memory-game {
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(6, auto);
     grid-auto-flow: dense;
-    margin-top: -50px;
   }
   .card {
     height: 115px;
@@ -360,7 +357,7 @@ form h1 {
     margin-top: 20px;
   }
   .card {
-    height: 110px;
+    height: 90px;
     width: 90px;
   }
 
@@ -380,7 +377,7 @@ form h1 {
     margin-top: 20px;
   }
   .card {
-    height: 100px;
+    height: 70px;
     width: 70px;
   }
 
