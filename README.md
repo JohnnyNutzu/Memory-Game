@@ -5,25 +5,25 @@ Javascript FlipCard Game with audio.
 Get 2 cards correct in order to get closer to win the game, but watch the time.
 Controlled in the Javascript with classes for audio, and cards function.
 
-Installation
+# Installation
 
 Node with javascript
 
-Support
+# Support
 
 Youtube and GitHub with Stack Overflow
 
 # Roadmap
 Highscore for every user.
 
-Contributing
+# Contributing
 
 Please and thank you
 
-Authors and acknowledgment
+# Authors and acknowledgment
 
 Youtube
 
-Project status
+# Project status
 
 We can always improve
